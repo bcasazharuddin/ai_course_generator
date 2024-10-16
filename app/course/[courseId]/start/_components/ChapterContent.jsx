@@ -16,10 +16,10 @@ function ChapterContent({chapter,content}) {
        <p className='text-gray-500'>{chapter?.about}</p>
        {/* video */}
        <div className='flex justify-center my-6'>
-        {content ?(content?.videoId && chapter?.name ? (<YouTube
+        {content?.videoId ? (<YouTube
        videoId={content?.videoId}
         opts = {opts}
-       />): '') : 'Please click chapter name to show details'}
+       />): (chapter?.name ? '' : 'Please click chapter name to show details')}
        </div> 
        {/* content */}
        <div >
